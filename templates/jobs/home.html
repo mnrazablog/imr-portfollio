@@ -1,0 +1,135 @@
+{% extends "jobs/base.html" %}
+{% load static %}
+{% block title %}I'M R | Front-End Developer{% endblock title %}
+{% block content %}
+  <nav class="navbar navbar-expand-md navbar-light">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'home' %}">
+        <img height="150px" src="{% static 'img/i-logo.png' %}" alt="logo"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse text-center" id="collapsibleNavbar">
+        <ul class="navbar-nav ml-auto">
+
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'say_hello' %}">
+              <button class="btn btn-rounded hello-btn">Say Hello</button>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+ 
+<!-- Intro -->
+ {% for intr in intro %}
+<main class="container" id="mainPage">
+  <h1 class="text-center py-2" id="designation">{{intr.designation}}</h1>
+
+    <p class="text-center" id="about">Producing high-quality websites and exceptional user experience </p>
+
+    <div class="text-center py-4" id="avtarimg">
+      <img class="img-fluid" src="{% static "img/mf-avatar.svg" %}" alt="avtar image">
+    </div>
+    <div class="text-center mt-4 pt-4" id="heroimg">
+      <img src="{% static "img/hero.svg" %}" alt="hero image" class="img-fluid">
+    </div>
+  </main>
+ 
+  <section class="container-fluid" id="details">
+    <div id="description" class="text-white text-center col-12">
+      <div class=""> 
+        <h1>  
+        {{intr.title_of_detail}}</h1>
+      </div>
+      <div class="pt-3">
+        {{intr.description}}
+      </div>
+      
+    </div>
+  </section>
+
+
+
+
+  
+  <section class="container jumbotron text-center skills">
+    <div class="row">
+      <div class="col-lg-4 col-sm-12 col-md-6">
+        <div><img src="{% static "img/frontend.svg" %}" alt="frontend"></div>
+        <h2 class="mt-4">{{intr.designation}}</h2>
+        <p>I like to code things from scratch, and enjoy bringing ideas to life in the browser.</p>
+      </div>
+
+      <div class="col-lg-4 col-sm-12 col-md-6">
+ <!--        <p class="mycolor">Languages I speak:</p>
+        <p>Hindi, English</p> -->
+        <div>
+          <p class="mycolor">Programming Languages/Framework</p>
+          <p> Python</p>
+          <p> Django</p>
+          <p> PHP</p>
+          <p> WordPress CMS</p>
+       <p class="mycolor">Dev Tools</p>
+        <p>Xampp</p>
+        <p>Github</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-12 col-md-6">
+       
+           <p class="mycolor">Frontend Technologies</p>
+          <p>HTML & CSS</p>
+          <p>JavaScript</p>
+          <p>Bootstrap 4</p>
+          <p>jQuery</p>
+          <p>Basic in ReactJS</p>
+          <p>VueJS</p>
+      </div>
+    </div>
+  </section>
+    {% endfor %}
+<!-- / Intro -->
+
+  <section class="projects">
+    <div class="text-center projects-title">
+      <h2>My Recent Works</h2>
+      <p>Heare are a few developed projects. Want see more? <a href="mailto:kgovardhan409@outlook.com">Email me.</a></p>
+    </div>
+    <div class="container">
+      <div class="row">
+{% for job in jobs %}
+        
+        <div class="project1-main col-lg-4 col-sm-12 py-4">
+          <div class="project1-img">
+            <img class="img-fluid" src="{{ job.image.url }}"
+              alt="{{ job.summary }}" style="border: 2px solid orange; height: 230px">
+          </div>
+          <div class="project-text">
+            <p>{{ job.summary }}</p>
+            <a href="{{ job.link }}"><button class="btn btn-rounded hello-btn">View more</button></a>
+          </div>
+        </div>
+
+{% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="container">
+    <div class="row col-12 start-a-project">
+      <div class="col-lg-4 col-sm-12 start-a-project-title">
+        Start a project
+      </div>
+      <div class="col-lg-4 col-sm-12">
+        <p>
+          Interested in working together? We should queue up a chat. I’ll buy the coffee.
+        </p>
+      </div>
+      <div class="col-lg-4 col-sm-12">
+       <a href="{% url 'say_hello' %}"> <button class="btn btn-rounded lets-do-btn">Let's do this</button></a>
+      </div>
+    </div>
+  </section>
+{% endblock content %}
