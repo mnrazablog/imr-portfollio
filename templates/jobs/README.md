@@ -1,3 +1,3 @@
-# kgovardhan_portfolio
+# imr_portfollio
 
-View This Repositoy on https://kgovardhan409.github.io/kgovardhan_portfolio/
+View This Repositoy on https://wwwimr-portfollio.herokuapp/
