@@ -2,5 +2,5 @@
 
 # imr-portfollio
 
-view my portfollio here: https://imr-portfollio.herokuapp.com/
+view my portfollio here: http://imr-portfollio.herokuapp.com/
 
