@@ -1,3 +1,3 @@
 # imr_portfollio
 
-View This Repositoy on https://wwwimr-portfollio.herokuapp/
+View This Repositoy on https://www.imr-portfollio.herokuapp/
